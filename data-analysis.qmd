@@ -1,0 +1,110 @@
+# Data Analysis
+
+The data analysis tools are also called by the main processing script: ``process_watershed.py``.
+
+## Individual Tools
+
+#### 1. Compute upstream and downstream barrier and fish species information {.unnumbered}
+
+**Tool: [compute_updown_barriers_fish.py](https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_updown_barriers_fish.py)**
+
+This script computes a number of statistics for each stream segment:
+
+- Number of upstream and downstream barriers
+- The identifiers of the upstream and downstream barriers
+- The fish species stocked on the stream segment
+- The fish species which are stocked upstream and downstream of the stream segment
+- The fish species surveyed on the stream segment
+- The fish species which were surveyed upstream and downstream of the stream segment
+
+##### Input Requirements: {.unnumbered}
+
+- Fish observation data
+- Stream network
+- Barriers table
+
+##### Output: {.unnumbered}
+
+- Addition of statistic fields to the stream network table
+
+#### 2. Compute Accessibility Models {.unnumbered}
+
+**Tool: [compute_gradient_accessibility.py](https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_gradient_accessibility.py)**
+
+This script computes an accessibility value for each fish species for each stream segment based on:
+
+- Computed gradient barriers
+- Maximum accessibility gradient (specified in the ``fish_species`` table)
+- Barrier location
+- Fish survey and stocking information
+
+Barriers include:
+
+- CABD loaded barriers (dams, waterfalls)
+- Modelled crossing on stream with Strahler order < 6
+
+Stream segments will be classified as:
+
+- ``ACCESSIBLE`` = all downstream gradients are less than the maximum gradient threshold for the given species and there are no barriers downstream (OR there are fish stocking or survey points upstream for the given species)
+- ``POTENTIAL ACCESSIBLE`` = all downstream gradients are less than the maximum gradient threshold for the given species, but there is a barrier downstream
+- ``NOT ACCESSIBLE`` = any downstream gradient is great than the maximum gradient threshold for the given species
+
+##### Input Requirements: {.unnumbered}
+
+- Stream network
+- Barriers Table
+
+##### Output: {.unnumbered}
+
+- Addition of an accessibility field for each fish species to the stream network table
+
+#### 3. Compute Habitat Models {.unnumbered}
+
+**Tool: [compute_habitat_models.py](https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_habitat_models.py)**
+
+This script computes a ``true``/``false`` value for the following habitat models for each stream segment, based on the following parameters and criteria:
+
+1. Stream gradient
+  ```
+  WHERE stream_gradient stream_gradient ≥ min_gradient AND
+  stream_gradient < max_gradient AND
+  species_accessibility IN (ACCESSIBLE OR POTENTIALLY ACCESSIBLE)
+  ```
+2. Discharge (m^3/s)
+  ```
+  WHERE stream_discharge ≥ min_discharge AND
+  stream_discharge < max_discharge AND
+  species_accessibility IN (ACCESSIBLE OR POTENTIALLY ACCESSIBLE)
+  ```
+3. Channel confinement (ratio of valley width/channel width)
+  ```
+  Always `true` for now, model to be defined later.
+  ```
+
+##### Input Requirements: {.unnumbered}
+
+- Stream network
+
+##### Output: {.unnumbered}
+
+- Addition of habitat model fields for each species to stream network table
+
+#### 4. Compute Barrier Statistics {.unnumbered}
+
+**Tool: [compute_modelled_crossings_upstream_values.py](https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_modelled_crossings_upstream_values.py)**
+
+This script computes a collection of modelled crossing statistics for each species and habitat model, including:
+
+- Total accessible upstream length: total length of streams that are accessible upstream of this point
+- Total upstream habitat length: total upstream length with habitat model = ``true``
+- Functional upstream habitat length: computed by walking up the stream network summing up length of stream segments with habitat model = ``true``, stopping at the first barrier encountered on the mainstem and all potential tributaries (upstream)
+
+##### Input Requirements: {.unnumbered}
+
+- Stream network
+- Modelled crossing
+- Barriers
+
+##### Output: {.unnumbered}
+
+- Addition of statistics fields to the modelled crossings table

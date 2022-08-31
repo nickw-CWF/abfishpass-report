@@ -1,0 +1,22 @@
+# Purpose
+
+:::{.callout-note}
+**abfishpass** is under active development and data sources, tools, and documentation will be updated over time.
+:::
+
+**abfishpass** is a suite of decision-support tools to help guide locally-driven, watershed-scale barrier remediation work in Alberta. The model framework builds on an extensive body of knowledge on how to quantify the connectivity of freshwater systems, as well as methods to prioritize barriers for remediation. By integrating freshwater connectivity and barrier prioritization modelling into the Watershed Connectivity Remediation Planning (WCRP) process, decision-makers can account for the considerable logistic and socioeconomic factors that influence connectivity remediation decision making, and link the results of the model outputs to on-the-ground implementation of remediation actions.
+
+The **abfishpass** tools will help quantify and update the connectivity context of a given watershed, forecast where best to take action to efficiently achieve the WCRP goals, and track progress over time. Ultimately, the goal is to support decision making around the strategic allocation of limited barrier-remediation resources by prioritizing those barriers that will provide the greatest ecological return-on-investment, thus providing an alternative to the opportunistic approach to barrier remediation. See *Section 4: Supporting Spatial Analyses* of the [Watershed Connectivity Remediation Planning practitioners' guide](https://cwf-fcf.org/en/resources/research-papers/CWF-WCRP-Guide.pdf) for more information on how connectivity modelling supports planning and decision making.
+
+**abfishpass v1.0** provides tools to (more details contained in subsequent sections):
+
+- Import and load required datasets to an open-source database <span class="badge bg-success">Complete</span> [^1]
+- Calculate elevation and slope of the stream network <span class="badge bg-success">Complete</span>
+- Generate modelled stream crossings and match barrier inspection data to corresponding modelled points <span class="badge bg-success">Complete</span> [^2]
+- Model gradient barriers, accessibility, and potential habitat <span class="badge bg-warning">Pending</span> [^3]
+- Prioritize barriers based on upstream habitat length (both total and functional networks) <span class="badge bg-success">Complete</span>
+- Calculate overall connectivity status of the watershed <span class="badge bg-success">Complete</span>
+
+[^1]: Tools are complete; however, full data release is pending data-sharing agreements for watercourse crossing inspection data.
+[^2]: Tools are complete; however, full data release is pending data-sharing agreements for watercourse crossing inspection data.
+[^3]: Gradient barrier and accessibility modelling is complete. Habitat modelling could not be completed due to the lack of existing literature to support derived thresholds for gradient and discharge for useable habitat (i.e., spawning and rearing) for target species. Pending expert input on parameter thresholds for habitat modelling.

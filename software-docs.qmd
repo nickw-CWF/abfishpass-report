@@ -1,0 +1,13 @@
+# License
+
+This section provides an overview of the model tools and how to run them.
+
+:::{.callout-note}
+**abfishpass** is under active development and documentation will change over time.
+:::
+
+## abfishpass software {.unnumbered}
+
+**Licence**: Apache License, Version 2.0 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+**Copyright**: &copy; 2022 Canadian Wildlife Federation, Alberta Environment and Parks

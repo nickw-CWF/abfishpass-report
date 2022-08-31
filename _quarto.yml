@@ -1,0 +1,33 @@
+project:
+  type: book
+
+book:
+  title: "Berland-Wildhay Watershed Connectivity Remediation Planning"
+  subtitle: "Activity 3: Data Compilation and Spatial Analysis Report"
+  author: "Canadian Wildlife Federation"
+  date: "8/1/2022"
+  chapters:
+    - index.qmd
+    - part: "Model Purpose and Approach"
+      chapters:
+        - intro.qmd
+        - model-overview.qmd
+    - part: "Software Documentation"
+      chapters:
+        - software-docs.qmd
+        - data-sources.qmd
+        - requirements-config.qmd
+        - data-loading.qmd
+        - data-analysis.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

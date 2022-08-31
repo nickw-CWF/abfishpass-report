@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Berland-Wildhay Watershed Connectivity Remediation Planning - 6&nbsp; Data Loading and Preparation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data-analysis.html" rel="next">
+<link href="./requirements-config.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading and Preparation</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Berland-Wildhay Watershed Connectivity Remediation Planning</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Data Compilation and Spatial Analysis Report</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Model Purpose and Approach</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Purpose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./model-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Approach</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Software Documentation</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software-docs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">License</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-sources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./requirements-config.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Requirements and Configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-loading.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading and Preparation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#loading-raw-data" id="toc-loading-raw-data" class="nav-link active" data-scroll-target="#loading-raw-data"> <span class="header-section-number">6.1</span> Loading Raw Data</a>
+  <ul class="collapse">
+  <li><a href="#configuring-fish-species-model-parameters" id="toc-configuring-fish-species-model-parameters" class="nav-link" data-scroll-target="#configuring-fish-species-model-parameters"> <span class="header-section-number">6.1.1</span> Configuring Fish Species Model Parameters</a></li>
+  </ul></li>
+  <li><a href="#watershed-processing" id="toc-watershed-processing" class="nav-link" data-scroll-target="#watershed-processing"> <span class="header-section-number">6.2</span> Watershed Processing</a>
+  <ul class="collapse">
+  <li><a href="#main-watershed-processing-script" id="toc-main-watershed-processing-script" class="nav-link" data-scroll-target="#main-watershed-processing-script"> <span class="header-section-number">6.2.1</span> Main Watershed Processing Script</a></li>
+  <li><a href="#individual-processing-scripts" id="toc-individual-processing-scripts" class="nav-link" data-scroll-target="#individual-processing-scripts"> <span class="header-section-number">6.2.2</span> Individual Processing Scripts</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-loading" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading and Preparation</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="loading-raw-data" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="loading-raw-data"><span class="header-section-number">6.1</span> Loading Raw Data</h2>
+<p>The first step is to populate the database with the required data. These load scripts are specific to the data provided for Alberta. Different source data will require modifications to these tools. We are using an open-source PostgreSQL database to store and process the data.</p>
+<p>Tools:</p>
+<ul>
+<li><a href="https://github.com/egouge/cwf-alberta/blob/main/src/load_alberta/create_db.py">load_alberta/create_db.py</a> – this script creates all the necessary database tables</li>
+<li><a href="https://github.com/egouge/cwf-alberta/blob/main/src/load_alberta/load_alberta.py">load_alberta/load_alberta.py</a> – this script uses OGR to load the provided Alberta data from the .gdb file into the PostgreSQL database.</li>
+</ul>
+<section id="configuring-fish-species-model-parameters" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="configuring-fish-species-model-parameters"><span class="header-section-number">6.1.1</span> Configuring Fish Species Model Parameters</h3>
+<p>As a part of the loading scripts a fish species table is created which contains the fish species of interest for modelling and various modelling parameters. Before processing the watershed these parameters should be reviewed and configured as necessary. See <a href="https://github.com/egouge/cwf-alberta/blob/main/src/load_alberta/create_db.py#L159">load_alberta/create_db.py</a>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently there is no velocity or channel confinement data. These parameters are placeholders for when this data is added.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="watershed-processing" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="watershed-processing"><span class="header-section-number">6.2</span> Watershed Processing</h2>
+<p>Data preparation is completed by watershed ID, each watershed is processed into a separate schema in the database named after the watershed identifier (e.g., ws17010301 for the Berland River).</p>
+<p>Currently preparation includes:</p>
+<ul>
+<li>Preprocessing step which loads all the streams from the raw datastore into the working schema</li>
+<li>Loading barrier datasets</li>
+<li>Snapping barriers to stream network and breaking the stream segements at these points</li>
+<li>Loading fish observation and habitat data</li>
+</ul>
+<p>Currently processing includes:</p>
+<ul>
+<li>Preprocessing step which loads all the streams from the raw datastore into the working schema</li>
+<li>Loading barriers from the CABD barrier database</li>
+<li>Computing Modelled Crossings</li>
+<li>Computing Mainstems<br>
+</li>
+<li>Computing an elevation values for all stream segments</li>
+<li>Computing a smoothed elevation value for all stream segments</li>
+<li>Compute gradient for each stream vertex based on vertex elevation and elevation 100m upstream.</li>
+<li>Break stream segments at required locations</li>
+<li>Reassign raw elevation, smoothed elevation to stream segments</li>
+<li>Compute segment gradient based on start, end elevation and length</li>
+<li>Load and snap fish stocking and observation data to stream network</li>
+<li>Compute upstream/downstream statistics for stream network, including number of barriers, fish stocking species and fish survey species</li>
+<li>Compute accessibility models based on stream gradient and barriers</li>
+<li>Compute habitat models</li>
+<li>Compute upstream/downstream statistics for modelled crossings</li>
+</ul>
+<section id="main-watershed-processing-script" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="main-watershed-processing-script"><span class="header-section-number">6.2.1</span> Main Watershed Processing Script</h3>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/process_watershed.py">process_watershed.py</a></strong></p>
+<p>The Watershed Processing tool can be used by running the main processing script:</p>
+<p><code>process_watershed.py -c config.ini [watershedid]</code></p>
+<p>This script calls and executes a series of individual process scripts (see section below). The <code>watershedid</code> field must be specified as a section header in the config.ini file. The section must describe the watershed processing details for example:</p>
+<pre><code>[17010301]
+#Berland: 17010301
+watershed_id = 17010301
+output_schema = ws17010301
+fish_observation_data = C:\temp\fishobservationdata.zip</code></pre>
+<section id="input-requirements" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements">Input Requirements:</h5>
+<ul>
+<li>Directory of tif images representing DEM files. All files should have the same projection and resolution.</li>
+<li>A raw streams table with id (uuid), name (varchar), strahler order (integer), watershed_id (varchar), and geometry (linestring) fields. The scripts assume this data is in an equal length projection so the st_length2d(geometry) function returns the length in metres.</li>
+</ul>
+</section>
+<section id="output" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output">Output:</h5>
+<ul>
+<li>A new schema with a streams table, barrier, modelled crossings and other output tables.</li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ALL EXISTING DATA IN THE OUTPUT TABLES WILL BE DELETED.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="individual-processing-scripts" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="individual-processing-scripts"><span class="header-section-number">6.2.2</span> Individual Processing Scripts</h3>
+<p>These scripts are the individual processing scripts that are used for the watershed processing steps.</p>
+<section id="preprocessing" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="preprocessing">1. Preprocessing</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/preprocess_watershed.py">preprocess_watershed.py</a></strong></p>
+<p>This script creates required database schemas, and loads stream data for the watershed into a working table in this schema.</p>
+<section id="input-requirements-1" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-1">Input Requirements:</h5>
+<ul>
+<li>Raw stream network dataset loaded</li>
+</ul>
+</section>
+<section id="output-1" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-1">Output:</h5>
+<ul>
+<li>A database schema named after the watershed ID</li>
+<li>A streams table in this schema populated with all streams from the raw dataset</li>
+</ul>
+</section>
+</section>
+<section id="loading-barriers" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="loading-barriers">2. Loading Barriers</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/load_and_snap_barriers_cabd.py">load_and_snap_barriers_cabd.py</a></strong></p>
+<p>This script loads waterfalls and dam barriers from the CABD database.</p>
+<section id="input-requirements-2" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-2">Input Requirements:</h5>
+<ul>
+<li>Access to the CABD database</li>
+<li>Streams table populated from the preprocessing step</li>
+</ul>
+</section>
+<section id="output-2" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-2">Output:</h5>
+<ul>
+<li>A new barrier table populated with dam and waterfall barriers from the CABD database</li>
+<li>The barrier table has two geometry fields - the raw field and a snapped field (the geometry snapped to the stream network). The maximum snapping distance is specified in the configuration file (default = 200 m).</li>
+</ul>
+</section>
+</section>
+<section id="compute-modelled-crossings" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="compute-modelled-crossings">3. Compute Modelled Crossings</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_modelled_crossings.py">compute_modelled_crossings.py</a></strong></p>
+<p>This script computes modelled crossings, defined as locations where rail, road, or trails cross stream networks (based on feature geometries). Due to data errors, some of these crossings may not actually exists on the ground.</p>
+<section id="input-requirements-3" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-3">Input Requirements:</h5>
+<ul>
+<li>Streams table populated from the preprocessing step</li>
+<li>Road, rail, and trail data loaded from the <a href="https://github.com/egouge/cwf-alberta/tree/main/src/load_alberta">/load_alberta/</a> scripts</li>
+</ul>
+</section>
+<section id="output-3" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-3">Output:</h5>
+<ul>
+<li>A new modelled crossings table with a reference to the stream edge the crossing crosses.</li>
+<li>Modelled crossings with <code>strahler_order</code> &gt;= 6 are classified as <code>sub_type</code> of bridge and a passability status of <code>PASSABLE</code></li>
+<li>Updated barriers table that now includes modelled crossing that occur on streams with strahler order &lt; 6</li>
+</ul>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AEP’s Watercourse Crossing Program maintains an inventory of inspections that have been performed by barrier owners under the program. We are currently negotiating a data-sharing agreement that would allow this data to be shared publicly, with some sensitive attributes witheld (e.g., specific ownership).</p>
+<p>Barrier inspection points will be matched to corresponding modelled stream crossings using a 150 m distance threshold (i.e., inspections points and modelled points within 150 m of each other will be matched). Unmatched inspection points will be manually review and matched, if possible.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="compute-mainstems" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="compute-mainstems">4. Compute Mainstems</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_mainstems.py">compute_mainstems.py</a></strong></p>
+<p>This script computes mainstems based on the names of streams and/or longest upstream length.</p>
+<section id="algorithm" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="algorithm">Algorithm</h5>
+<p>Mainstems are computed by starting at the sink node and walking up the network. At any confluence the mainsteam is push up the edge that:</p>
+<ol type="1">
+<li>Has the same stream name as the current edge</li>
+<li>If no edges have the same name then any named edge; if there are multiple named edges it picks the edge with the longest path to a headwater</li>
+<li>If no named edges; then it picks the edge with the longest path to a headwater.</li>
+</ol>
+</section>
+<section id="input-requirements-4" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-4">Input Requirements:</h5>
+<ul>
+<li>Streams table</li>
+</ul>
+</section>
+<section id="output-4" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-4">Output:</h5>
+<ul>
+<li>Three new fields, <code>mainstem_id</code>, <code>downstream_route_measure</code>, and <code>upstream_route_measure</code>, added to the input table. The measure fields are calculated in metres.</li>
+</ul>
+</section>
+</section>
+<section id="assign-raw-z-elevation-values" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="assign-raw-z-elevation-values">5. Assign Raw Z (Elevation) Values</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/assign_raw_z.py">assign_raw_z.py</a></strong></p>
+<p>This script “drapes” a stream network over provided DEMs and computes a raw Z (i.e., elevation) value for each vertex in the stream network.</p>
+<section id="algorithm-1" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="algorithm-1">Algorithm</h5>
+<p>To compute raw elevation, for each vertex:</p>
+<ol type="1">
+<li><p>Drop the vertex on the DEM and determine which 4 cells are the nearest to the point. In the example below the four nearest cells to V are A, B, C, and D.</p></li>
+<li><p>Compute a bilinear interpolated value at this point using the values from cells A, B, C, and D.</p></li>
+</ol>
+<pre><code>A = (x1, y2, Az)
+B = (x2, y2, Bz)
+C = (x1, y1, Cz)
+D = (x2, y1, Dz)
+V = (x, y, Vz)
+    
+fxy1 = ((x2 - x) / (x2- x1))*Cz + ((x - x1)/(x2 - x1))*Dz
+fxy2 = ((x2 - x) / (x2- x1))*Az + ((x - x1)/(x2 - x1))*Bz
+Vz = ((y2 - y) / (y2 - y1))*fxy1 + ((y - y1)/(y2 - y1))*fxy2
+
++-------------+-------------+
+|             |             |
+|             |             |
+|      A      |      B      |
+|             |             |
+|             |             |
++-------------+-------------+
+|          V  |             |
+|             |             |
+|      C      |      D      |
+|             |             |
+|             |             |
++-------------+-------------+</code></pre>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>we assume that the elevation values provided in the DEM represent the elevation at the center point of the cell.</p>
+</div>
+</div>
+</section>
+<section id="input-requirements-5" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-5">Input Requirements:</h5>
+<ul>
+<li>Directory of .tiff images representing DEM files. All files should have the same projection and resolution.</li>
+<li>Streams table populated from the preprocessing step.</li>
+</ul>
+</section>
+<section id="output-5" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-5">Output:</h5>
+<ul>
+<li>A <code>geometry_raw3d</code> field added to the stream table that represents the 3d geometry for the segment.</li>
+</ul>
+</section>
+</section>
+<section id="compute-smoothed-z-values" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="compute-smoothed-z-values">6. Compute Smoothed Z Values</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/smooth_z.py">smooth_z.py</a></strong></p>
+<p>Takes a set of stream edges with raw z values and smooths them to enforce that the streams are always flowing down hill.</p>
+<section id="algorithm-2" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="algorithm-2">Algorithm</h5>
+<p>The smoothing process ensures streams always flow downhill.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>This algorithm does not contain any spike detection, so if there is an error in the DEM that causes a significant spike in the stream network this will significantly affect the results.</li>
+<li>Nodes and vertices with no elevation values <code>NODATA</code>, are ignored in the computation of the min/max values.</li>
+</ul>
+</div>
+</div>
+<ol type="1">
+<li>Create a graph of the nodes in the stream network</li>
+<li>Starting at the sink nodes and walking up the network computing a <code>max_elevation</code> value for each node. This value is the maximum of the node’s raw elevation and the downstream node elevation values</li>
+<li>Starting at the source nodes and walking down the network compute a <code>min_elevation</code> value for each node. This value is the minimum of the node’s raw elevation values and the upstream node elevation values.</li>
+<li>For each node assign a smoothed elevation of the the average of the <code>max_elevation</code> and <code>min_elevation</code></li>
+<li>For each edge in the network</li>
+</ol>
+<ul>
+<li>clip all vertices elevations so they are no smaller or bigger than the z values at the end nodes</li>
+<li>compute min/max elevations for each vertex then average the results to get smoothed value</li>
+</ul>
+<pre><code> Node  Elevation   Min  Max   Smoothed
+  A       12       12   12    12
+  B       10       10   10    10
+  C       6        6    7     6.5
+  D       7        6    7     6.5      
+  F       8        8    8     8      
+  G       2        2    2     2
+  
+    A           B 
+     \         /
+      \       /
+       \     /
+        C---+
+        |      F
+        |     / 
+        |    /
+        D---+
+        |
+        |
+        |
+        F
+        </code></pre>
+</section>
+<section id="input-requirements-6" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-6">Input Requirements:</h5>
+<ul>
+<li>Streams table with <code>id</code> and <code>geometry_raw3d</code> fields (output from the raw z processing)</li>
+</ul>
+</section>
+<section id="output-6" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-6">Output:</h5>
+<ul>
+<li>A new field, <code>geometry_smoothed3d</code>, added to the input table</li>
+</ul>
+</section>
+</section>
+<section id="compute-vertex-gradients" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="compute-vertex-gradients">7. Compute Vertex Gradients</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_vertex_gradient.py">compute_vertex_gradient.py</a></strong></p>
+<p>For every stream vertex, this scripts takes the elevation at that point and the elevation along the mainstem at a point 100m upstream and computes the gradient based on those two elevations.</p>
+<section id="input-requirements-7" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-7">Input Requirements:</h5>
+<ul>
+<li>Streams table with smoothed elevation values.</li>
+</ul>
+</section>
+<section id="output-7" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-7">Output:</h5>
+<ul>
+<li>A new table (<code>vertex_gradients</code>) with a single point for every vertex with a gradient calculated. This table includes both the vertex geometry, upstream geometry and elevation values at both those locations.</li>
+</ul>
+</section>
+</section>
+<section id="break-streams" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="break-streams">8. Break Streams</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/break_streams_at_barriers.py">break_streams_at_barriers.py</a></strong></p>
+<p>This script breaks the stream network at “barriers” and recomputes necessary attributes.</p>
+<section id="algorithm-3" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="algorithm-3">Algorithm</h5>
+<p>For this script a barrier is considered to be: a cabd barrier (dam, waterfall), all modelled crossings, and the most downstream vertices with a gradient greater than minimum value specified in the <code>fish_species</code> table for the <code>accessibility_gradient</code> field in a collection of vertices with gradient values larger than this value.</p>
+<p>For example if stream vertices has these gradient classes:</p>
+<p>x = gradient &gt; 0.35</p>
+<p>o = gradient &lt; 0.35</p>
+<pre><code>x-----x------o------o------x------x-------x-------o----&gt;
+
+1-----2------3------4------5------6-------7-------8----&gt;</code></pre>
+<p>Then the stream edge would be split at vertices 2 and 7.</p>
+</section>
+<section id="input-requirements-8" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-8">Input Requirements:</h5>
+<ul>
+<li>Streams table with smoothed elevation values</li>
+</ul>
+</section>
+<section id="output-8" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-8">Output:</h5>
+<ul>
+<li>A <code>break_points</code> table that lists all the locations where the streams were broken</li>
+<li>Updated streams table with mainstem route measures recomputed (in km this time)</li>
+<li>Updated modelled crossings table (<code>stream_id</code> is replaced with a <code>stream_id_up</code> and <code>stream_id_down</code> referencing the upstream and downstream edges linked to the point)</li>
+</ul>
+</section>
+</section>
+<section id="re-compute-raw-and-smoothed-z-values" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="re-compute-raw-and-smoothed-z-values">9. Re-compute Raw and Smoothed Z Values</h4>
+<p>Recompute z values again based on the raw data so any added vertices can be computed based on the raw data and not interpolated points. Re-run z-value smoothing algorithm.</p>
+</section>
+<section id="compute-stream-segment-gradients" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="compute-stream-segment-gradients">10. Compute Stream Segment Gradients</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/compute_segment_gradient.py">compute_segment_gradient.py</a></strong></p>
+<p>This script computes a stream segment gradient based on the smoothed elevation for the most upstream coordinate, most downstream coordinate, and the length of the stream segment.</p>
+<section id="input-requirements-9" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-9">Input Requirements:</h5>
+<ul>
+<li>Streams table with smoothed elevation values</li>
+</ul>
+</section>
+<section id="output-9" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-9">Output:</h5>
+<ul>
+<li>Addition of a <code>segment_elevation</code> field to the streams table</li>
+</ul>
+</section>
+</section>
+<section id="load-and-snap-fish-observations" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="load-and-snap-fish-observations">11. Load and Snap Fish Observations</h4>
+<p><strong>Tool: <a href="https://github.com/egouge/cwf-alberta/blob/main/src/processing_scripts/load_and_snap_fishobservation.py">load_and_snap_fishobservation.py</a></strong></p>
+<p>This script loads fish observation data provided and snaps it to the stream network.</p>
+<section id="input-requirements-10" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="input-requirements-10">Input Requirements:</h5>
+<ul>
+<li>Fish observation data</li>
+<li>Stream network</li>
+</ul>
+</section>
+<section id="output-10" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="output-10">Output:</h5>
+<ul>
+<li>Addition of three tables: <code>fish_aquatic_habitat</code>, <code>fish_stocking</code>, and <code>fish_survey</code></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./requirements-config.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Requirements and Configuration</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data-analysis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

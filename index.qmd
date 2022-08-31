@@ -1,0 +1,20 @@
+# Data Compilation and Spatial Analysis Report {.unnumbered}
+
+This site contains the *Data Compilation and Spatial Analysis Report*, the main deliverable under Activity 3 of the Canada Nature Fund for Aquatic Species at Risk (CNFASAR) grant for the Berland-Wildhay Watershed Connectivity Remediation Planning project.
+
+The goal of Activity 3 was to support the Berland-Wildhay watershed connectivity remediation planning process by piloting the development and testing of an open-source, automated, and flexible freshwater connectivity modelling framework to assess the connectivity status of the watershed and prioritize the barriers that would provide the greatest gains in connectivity for target species, if they were to be remediated. This framework was tested and applied in the Berland-Wildhay watershed, but was designed to be flexible enough to be applied in any watershed or critical habitat area in Alberta, or easily re-run in the future as new information and data become available. The Canadian Wildlife Federation (CWF), Athabasca Watershed Council (AWC), and Alberta Environment and Parks (AEP) worked with local partners and industry to share existing datasets and local knowledge on abundance and distribution, useable habitat (e.g., spawning or rearing) locations and suitability, and barriers to fish passage (e.g., dams, watercourse crossings) for the target species group *Coldwater Salmonids* -- comprising Athabasca Rainbow Trout, Western Arctic Bull Trout, Artic Grayling, and Mountain Whitefish -- to incorporate into this modelling framework.
+
+The resulting freshwater connectivity modelling framework for Alberta is called **abfishpass**[^1]. The framework builds on existing habitat and barrier prioritization datasets and models in Alberta (e.g., AEP's Watercourse Crossing Program, Foothills Stream Crossing Partnership (FSCP)), focusing on replicability and ease of access to data and analysis results. The tool development for **abfishpass** was also inspired by the [bcfishpass](https://github.com/smnorris/bcfishpass) model, developed by the BC Fish Passage Technical Working Group, Hillcrest Geographics, CWF, and NewGraph Environmental.
+
+**abfishpass v1.0** has been released and tested on the Berland-Wildhay watersheds to assess the connectivity status and produce a list of priority barriers to pursue for remediation to improve connectivity for *Coldwater Salmonids*; however, the tools remain under active development and CWF will continue to fund additions and upgrades during summer/fall 2022. Additionally, the results for the preliminary analysis for the Berland-Wildhay watershed have not been shared publicly at the time of publishing due to on-going data-sharing discussions with AEP's Watercourse Crossing Program and FSCP for watercourse crossing inspection data, which are vital to improve the accuracy of the model results (see Model Purpose and Approach for more details on the use of watercourse crossing inspection data). Once data-sharing agreements are in place, the data and analysis results will be made available to project partners and the public via the Berland-Wildhay Watershed Connectivity Remediation Plan.
+
+The first section of this report provides a summary of the purpose and approach of the development of **abfishpass**.
+
+The second section contains the technical documentation for the abfishpass software, including:
+
+- Data sources
+- Requirements and configuration
+- Data loading and preparation
+- Data analysis
+
+[^1]: A special thank you to [Refractions Research Inc.](http://www.refractions.net/) for their technical expertise in developing the **abfishpass** tools.

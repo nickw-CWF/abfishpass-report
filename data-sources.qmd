@@ -1,0 +1,19 @@
+# Data sources {#sec-sources}
+
+The following spatial data sources are used by the ***abfishpass*** tools:
+
+- [Fish and Wildlife Management Information System (FWMIS) - Fish Survey](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- [FWMIS - Aquatic Habitat](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- [FWMIS - Fish Stocking](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- [FWMIS - Hydrology Arcs](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- Base Features Access Roads -- Alberta Environment and Parks
+- Base Features Access Railway -- Alberta Environment and Parks
+- Designated Trails -- Alberta Environment and Parks
+- Barrier Inspection Data -- Watercourse Crossing Program, AEP [^1]
+- [Canadian Aquatic Barriers Database](https://aquaticbarriers.ca) -- Canadian Wildlife Federation
+
+:::{.callout-note}
+***abfishpass*** is under active development and data sources may change over time.
+:::
+
+[^1]: Pending data-sharing agreements

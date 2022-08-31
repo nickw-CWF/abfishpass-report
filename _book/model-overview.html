@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Berland-Wildhay Watershed Connectivity Remediation Planning - 2&nbsp; Approach</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./software-docs.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Approach</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Berland-Wildhay Watershed Connectivity Remediation Planning</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Data Compilation and Spatial Analysis Report</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Model Purpose and Approach</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Purpose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./model-overview.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Approach</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Software Documentation</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software-docs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-sources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./requirements-config.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Requirements and Configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-loading.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Loading and Preparation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#define-the-geographic-scope" id="toc-define-the-geographic-scope" class="nav-link active" data-scroll-target="#define-the-geographic-scope"> <span class="header-section-number">2.1</span> Define the geographic scope</a></li>
+  <li><a href="#define-the-thematic-scope" id="toc-define-the-thematic-scope" class="nav-link" data-scroll-target="#define-the-thematic-scope"> <span class="header-section-number">2.2</span> Define the thematic scope</a>
+  <ul class="collapse">
+  <li><a href="#target-species" id="toc-target-species" class="nav-link" data-scroll-target="#target-species">Target species</a></li>
+  <li><a href="#dimensions-of-connectivity" id="toc-dimensions-of-connectivity" class="nav-link" data-scroll-target="#dimensions-of-connectivity">Dimensions of connectivity</a></li>
+  <li><a href="#barrier-types" id="toc-barrier-types" class="nav-link" data-scroll-target="#barrier-types">Barrier types</a></li>
+  </ul></li>
+  <li><a href="#estimate-watershed-accessibility-and-habitat-distribution" id="toc-estimate-watershed-accessibility-and-habitat-distribution" class="nav-link" data-scroll-target="#estimate-watershed-accessibility-and-habitat-distribution"> <span class="header-section-number">2.3</span> Estimate watershed accessibility and habitat distribution</a>
+  <ul class="collapse">
+  <li><a href="#stream-accessibility" id="toc-stream-accessibility" class="nav-link" data-scroll-target="#stream-accessibility">Stream Accessibility</a></li>
+  <li><a href="#model-potential-habitat" id="toc-model-potential-habitat" class="nav-link" data-scroll-target="#model-potential-habitat">Model Potential Habitat</a></li>
+  </ul></li>
+  <li><a href="#quantify-current-connectivity-status-of-the-watershed" id="toc-quantify-current-connectivity-status-of-the-watershed" class="nav-link" data-scroll-target="#quantify-current-connectivity-status-of-the-watershed"> <span class="header-section-number">2.4</span> Quantify current connectivity status of the watershed</a></li>
+  <li><a href="#undertake-barrier-prioritization" id="toc-undertake-barrier-prioritization" class="nav-link" data-scroll-target="#undertake-barrier-prioritization"> <span class="header-section-number">2.5</span> Undertake barrier prioritization</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Approach</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><strong>abfishpass</strong> is a decision-support tool intended to compliment the watershed connectivity remediation planning process (see the report for <em>Activity 2: Deliver Watershed Connectivity Planning Framework and Associated Decision-Support Tools and Planning Exercises</em>), and the decisions made during the planning workshops with partners will influence the inputs, parameters, and outputs of the spatial models. This collaborative method blend local stakeholder and rightsholder knowledge with innovative GIS analyses to gain a shared understanding of where remediation efforts will have the greatest benefit for fish. The primary steps in the spatial modelling approach are:</p>
+<ol type="1">
+<li>Define the geographic scope</li>
+<li>Define the thematic scope</li>
+<li>Estimate watershed accessibility and habitat distribution</li>
+<li>Quantify current connectivity status of the watershed</li>
+<li>Undertake barrier prioritization</li>
+</ol>
+<p><strong>abfishpass</strong> is designed to be flexible to allow users to customize the selection of geographic scope (usually watersheds), target species, and barrier types that feed into the model tools. Currently, the tools only support modelling of longitudinal connectivity (i.e., upstream-downstream), but we hope to expand the tools to support other dimensions of connectivity (e.g., lateral connectivity) in the future. WCRPs are intended to be “living plans” that are updated regularly as new information becomes available, or if local priorities and contexts change, which requires easily updated and run spatial models, which <strong>abfishpass</strong> aims to achieve.</p>
+<section id="define-the-geographic-scope" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="define-the-geographic-scope"><span class="header-section-number">2.1</span> Define the geographic scope</h2>
+<p>Simply, this is setting the geographic extent for analysis to focus the scope of the project, i.e., placing a polygon around the project area. All streams and barriers within the geographic extent are in scope, everything else is out of scope. The geographic scope is generally a watershed boundary, but can also be other types of geographic areas, including species-at-risk distribution areas and Indigenous traditional territory boundaries.</p>
+<p>In Alberta, the Hydrologic Unit Code (HUC) system is used to define watersheds at various scales. Generally, <strong>abfishpass</strong> should be used with HUC4, HUC6, or HUC8 watersheds.</p>
+</section>
+<section id="define-the-thematic-scope" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="define-the-thematic-scope"><span class="header-section-number">2.2</span> Define the thematic scope</h2>
+<p>Connectivity is a critical component of freshwater ecosystems that encompasses a variety of factors related to ecosystem structure and function, such as the ability of aquatic organisms to disperse and/or migrate, the transportation of energy and matter (e.g., nutrient cycling and sediment flows), and temperature regulation. Though each of these factors are important when considering the health of a watershed, for the purposes of WCRPs the term “connectivity” is generally defined as the degree to which aquatic species can disperse and/or migrate freely through freshwater systems. WCRPs are intended to focus on the direct remediation and prevention of localized, physical barriers instead of the broad land-use patterns that are causing chronic connectivity issues in the watershed, which differentiates this process from traditional watershed or fish habitat restoration plans). As such, defining the thematic scope of “connectivity” helps determine key parameters for spatial modelling, and comprises three main concepts:</p>
+<ol type="1">
+<li>Target species</li>
+<li>Dimensions of connectivity</li>
+<li>Barrier types</li>
+</ol>
+<section id="target-species" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="target-species">Target species</h3>
+<p>The choice of which target species to select will depend on several factors, such as funding source priorities, the availability of species-distribution data to inform the spatial analyses, and the ecological and cultural priorities of the team. Some time target species can be combined into groups or “guilds” to simplify the planning and spatial modelling processes (e.g., Coldwater Salmonids for the Berland-Wildhay project).</p>
+<p>The selection of target species will inform spatial modelling in two ways:</p>
+<ol type="1">
+<li>Life history characteristics - the way species move through freshwater systems will help determine which barriers effect their movements and the way we quantify the connectivity status of the watershed (see Table 1).</li>
+<li>Habitat use - the geomorphic characteristics of a stream reach the is suitable for spawning, rearing, or other life stages will vary by species (see <em>Estimate watershed accessibility and habitat distribution</em>).</li>
+</ol>
+<table class="table">
+<caption>Table 1. Typical life history characteristics of freshwater species.</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Life history</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diadromous</td>
+<td>Species that migrate between the ocean and freshwater to complete their life cycles. These include species that spawn in freshwater and migrate to the ocean (anadromous) and vice versa (catadromous).</td>
+</tr>
+<tr class="even">
+<td>Adfluvial</td>
+<td>Species that migrate between lakes or reservoirs and rivers.</td>
+</tr>
+<tr class="odd">
+<td>Fluvial</td>
+<td>Species that migrate between mainstem rivers and tributaries.</td>
+</tr>
+<tr class="even">
+<td>Resident</td>
+<td>Species that typically spend their entire life cycle near where they hatched, though may occasionally disperse</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dimensions-of-connectivity" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="dimensions-of-connectivity">Dimensions of connectivity</h3>
+<p>There are four widely recognized dimensions of <em>structural</em> connectivity of freshwater systems (see Table 2), each of which will be impacted by different barrier types and therefore creates different analysis needs for spatial modelling.</p>
+<table class="table">
+<caption>Table 2. The four structural dimension of freshwater connectivity.</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Connectivity dimension</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Longitudinal</td>
+<td>Connectivity of a stream along the upstream-downstream plane (Figure 1), including access to tributaries and spawning and rearing habitat. Longitudinal connectivity can be fragmented by physical barriers (e.g., anthropogenic or natural structures) or by physiological limits of distribution for species (e.g., stream gradient, temperature, or flow requirements).</td>
+</tr>
+<tr class="even">
+<td>Lateral</td>
+<td>Connectivity of a stream bed to adjacent riparian wetlands and floodplains (Figure 1), including access to rearing and overwintering habitat. Lateral connectivity can be fragmented by physical barriers, channelization, armouring of the stream bed, or artificial flow regulation.</td>
+</tr>
+<tr class="odd">
+<td>Vertical</td>
+<td>Connectivity of a stream bed to groundwater/hyporheic zone (Figure 1), including access to oxygen-rich temperature refugia. Vertical connectivity can be fragmented by water withdrawals and anthropogenically induced changes to the hydrological, thermal, and sediment regimes of the watershed.</td>
+</tr>
+<tr class="even">
+<td>Temporal</td>
+<td>Connectivity variability in any of the three spatial dimensions based on temporal changes in the natural flow regime. Variation in temporal connectivity occurs naturally; however, fragmentation can be exacerbated through anthropogenically induced changes to the hydrological, thermal, and sediment regimes of the watershed.</td>
+</tr>
+</tbody>
+</table>
+<p>Since the WCRP process and supporting spatial models focus on the direct remediation and prevention of localized, physical barriers to connectivity, the structural dimensions that WCRPs will typically focus on are longitudinal and lateral, because 1) fragmentation to those dimensions of connectivity can be more directly tied to physical barriers and 2) field assessment, remediation planning, and barrier prioritization methods are further developed for them. Nonetheless, it is recommended that vertical and temporal connectivity still be accounted for in the planning process and spatial modelling because vertical and temporal factors can influence the success of remediation actions. For example:</p>
+<ul>
+<li>Longitudinal and lateral barriers may be passable to fish at certain times of the year, but alignment of passability timing with the needs of each life history stage must be considered when prioritizing barriers for remediation (e.g., juvenile migration to rearing habitat).</li>
+<li>Vertical connectivity issues may need to be addressed in conjunction with remediating longitudinal or lateral barriers (e.g., installing beaver-dam analogues in conjunction with dyke breaching to expand the area of groundwater influence and cold water refugia).</li>
+</ul>
+<center>
+<p><img src="connectivity-dimensions.png" class="img-fluid" width="400"></p>
+<figcaption>
+Figure 1. An illustration of the three spatial dimensions of freshwater structural connectivity.
+</figcaption>
+</center>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently, <strong>abfishpass</strong> only supports modelling of longitudinal connectivity, but we hope to expand the tools to support lateral connectivity in the future.</p>
+</div>
+</div>
+</section>
+<section id="barrier-types" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="barrier-types">Barrier types</h3>
+<p>Within the context of WCRPs, connectivity is primarily constrained by physical barriers, including anthropogenic infrastructure such as dams, weirs, and stream crossings, and natural features such as waterfalls. The selection of dimensions of connectivity on which to focus will influence which barrier types are selected to include in the planning process and spatial models (see Table 3).</p>
+<table class="table">
+<caption>Table 3. A non-exhaustive list of common barrier classes, barrier types, and their respective connectivity dimensions.</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Barrier Class</th>
+<th>Barrier Types</th>
+<th>Spatial Connectivity Dimensions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Water-control structures</td>
+<td>Dams</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Weirs</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Water-withdrawal structures</td>
+<td>Vertical</td>
+</tr>
+<tr class="even">
+<td>Flood-mitigation infrastructure</td>
+<td>Tide gates, aboiteaux</td>
+<td>Longitudinal, lateral</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Pump stations</td>
+<td>Vertical</td>
+</tr>
+<tr class="even">
+<td>Stream crossings</td>
+<td>Road-stream crossings</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Rail-stream crossings</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Trail-stream crossings</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="odd">
+<td>Lateral</td>
+<td>Dykes/levees</td>
+<td>Lateral</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Roads, rail lines</td>
+<td>Longitudinal/lateral</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Berms, embankments</td>
+<td>Lateral</td>
+</tr>
+<tr class="even">
+<td>Natural</td>
+<td>Waterfalls</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Debris jams (e.g., rocks, logs)</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Sediment wedges</td>
+<td>Longitudinal/lateral</td>
+</tr>
+<tr class="odd">
+<td>Physiological</td>
+<td>Gradient</td>
+<td>Longitudinal</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Flow</td>
+<td>Longitudinal, vertical</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Temperature</td>
+<td>Vertical/longitudinal</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, it will be necessary for spatial modelling to compile information and data on barrier types that are not under consideration for remediation. For example, it is useful to incorporate natural barriers (e.g., waterfalls) into the spatial models to more accurately quantify the availability of habitat in the watershed, even though we don’t want to consider waterfalls for remediation. Barrier data will be overlaid on the stream network during analysis to allow for quantification of the amount of habitat potentially blocked by individual structures (which is the basis for barrier prioritization) and for estimating the overall connectivity status of the watershed.</p>
+<p>Currently, <strong>abfishpass</strong> supports the following barrier types:</p>
+<ul>
+<li>Dams</li>
+<li>Stream crossings (road, rail, and trail)</li>
+<li>Waterfalls</li>
+<li>Gradient barriers</li>
+</ul>
+</section>
+</section>
+<section id="estimate-watershed-accessibility-and-habitat-distribution" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="estimate-watershed-accessibility-and-habitat-distribution"><span class="header-section-number">2.3</span> Estimate watershed accessibility and habitat distribution</h2>
+<p>Once the geographic and thematic scope have been defined, the steps are in place to derive the necessary parameters and perform the spatial analyses. The foundation for freshwater connectivity modelling, including <strong>abfishpass</strong>, are analyses to calculate key parameters within the hydrographic networks (i.e., spatial representation of streams/rivers and lakes). This involves “draping” the stream network over digital elevation models (DEMs) and developing or incorporating other models to derive key geomorphic characteristics of the stream network.</p>
+<p>There are two primary steps to this process:</p>
+<ol type="1">
+<li>Calculate accessibility of streams in the watershed</li>
+<li>Define useable habitat distribution</li>
+</ol>
+<section id="stream-accessibility" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="stream-accessibility">Stream Accessibility</h3>
+<p>Defining stream accessibility relies on incorporating natural (e.g., waterfall) and physiological (e.g., gradient barrier) data into spatial models - we don’t want to prioritize barriers for remediation that target species cannot naturally access. The goal of this step is to define the accessibility values of each stream segment in the watershed, which can be categorized as:</p>
+<ul>
+<li>Potentially accessible: the stream segment <em>should</em> be accessible to target species in the absence of anthropogenic barriers</li>
+<li>Not accessible: the stream segment is not accessible to target species, even in the absence of anthropogenic barriers (i.e., there is a natural barrier like a waterfall or gradient barrier)</li>
+<li>Accessible: the stream segment is potentially accessible and is downstream of any known anthropogenic barriers</li>
+</ul>
+<p>Waterfall data may need field verification as part of the iterative barrier prioritization process, as some species can pass waterfalls of a certain height (e.g., Chinook Salmon can pass waterfalls up to 5 m in height) and therefore some waterfalls may not be barriers to fish passage.</p>
+<p>Identifying gradient barriers requires the derivation of gradient values from the elevation changes of the stream network. Different target species will have different swimming abilities, and therefore identify stream reaches that have sustained gradient values above a given species’ passability thresholds is important to exclude non-accessible streams from further analysis steps.</p>
+<p>Accessibility is also dependent on species life history strategies, for example, a 5 m waterfall will restrict potentially accessible stream for anadramous species (they cannot move upstream of the waterfall during their migration). But, for a system with fluvial or resident species, there may exist population both upstream and downstream of the waterfall, meaning that the stream segments upstream of the waterfall should still be considered <em>potentially accessible</em>, as long as species presence is verifiable upstream of the waterfall.</p>
+<p>For example, for fluvial species with a gradient barrier threshold set to 35% and target species observations upstream of a given “barrier”:</p>
+<center>
+<img src="./accessibility.png" class="img-fluid" style="width:100.0%">
+<figcaption>
+Figure 2. A conceptual example of defining stream segment accessibility.
+</figcaption>
+</center>
+<p>&nbsp;</p>
+<p>Assigning accessibility values refines the geographic scope of the analysis for subsequent steps – modelled habitat will not be considered and barriers will not be prioritized for <em>not accessible</em> streams. This allows resources to be focused on the parts of the watershed that will most benefit target species.</p>
+</section>
+<section id="model-potential-habitat" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="model-potential-habitat">Model Potential Habitat</h3>
+<p>While calculating stream accessibility helps refine the scope for analysis, it does not guarantee that <em>accessible</em> and <em>potentially accessible</em> streams will support useable habitat (e.g., spawning, rearing, or overwintering habitat) for target species. During the connectivity status assessment and barrier prioritization process, we want to ensure that we are focusing on the quantity of potential useable habitat, rather than total stream length. For example, a barrier that is blocking 2 km of spawning habitat should be prioritized over a barrier that is blocking 200 m of spawning habitat and 5 km of non-habitat.</p>
+<p>To model potential habitat in the watershed, <strong>abfishpass</strong> adapts the Intrinsic Potential (IP) habitat modelling framework (see <a href="https://www.researchgate.net/publication/261359826_Development_and_Management_of_Fish_Intrinsic_Potential_Data_and_Methodologies_State_of_the_IP_2008_Summary_Report_Pacific_Northwest_Aquatic_Monitoring_Partnership_National_Oceanic_and_Atmospheric_Admi">Sheer et al.&nbsp;2009</a>). The IP framework derives three key geomorphic parameters of stream segments, which are used to assign potential habitat values:</p>
+<ol type="1">
+<li>Gradient</li>
+<li>Discharge</li>
+<li>Channel confinement (the ratio of channel width to valley/floodplain width)</li>
+</ol>
+<p>The framework can be custimized to model individual habitat types (e.g., spawning vs.&nbsp;rearing) separately for each species. The IP model is not intended to replace field assessment, but rather acts as a decision-support tool to identify the stream segments in the watershed that are most likely to support useable habitat, which feeds into the iterative barrier prioritization process.</p>
+<p>Unfortunately, after undertaking a thorough literature review, the supporting information does not exist to derive thresholds for each IP parameter for Coldwater Salmonid species in Alberta for the Berland-Wildhay Connectivity Remediation Planning project. Nonetheless, the <strong>abfishpass</strong> tools have been developed to support the required inputs for the IP framework for when we are able to derive species-specific thresholds for each parameter. AWC, AEP, and CWF will work with species experts to begin deriving these parameter thresholds. When in place the model will evaluate whether a stream segment falls within the minimum and maximum values for stream gradient, discharge, and channel confinement. This will help refine upstream habitat estimates for each barrier in the watershed.</p>
+<p>In the absence of IP inputs, all &gt;1 order stream segments are considered to be “potential habitat” in barrier prioritization and connectivity status calculations.</p>
+</section>
+</section>
+<section id="quantify-current-connectivity-status-of-the-watershed" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="quantify-current-connectivity-status-of-the-watershed"><span class="header-section-number">2.4</span> Quantify current connectivity status of the watershed</h2>
+<p>To inform the goal setting and barrier prioritization components of the WCRP process, it is necessary to quantify an estimate of the current connectivity status of the watershed. This will rely on the best available information, and can be updated over time as new data is collected (e.g., field inspections of modelled crossings).</p>
+<p>To calculate the current connectivity status of the watershed it is necessary to overlay the barriers on the stream network (with accessibility and habitat already modelled). The tools will calculate the current status of a watershed by dividing the amount of potential habitat that is currently accessible (i.e., downstream of known anthropogenic barriers) by the total amount of potential habitat in the watershed.</p>
+<p><span class="math inline">\(Connectivity\;status = \frac{Accessible\;potential\;habitat}{Total\;potential\;habitat}\)</span></p>
+<p>This status is used to inform goal-setting and track progress over time in the watershed connectivity remediation planning process.</p>
+</section>
+<section id="undertake-barrier-prioritization" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="undertake-barrier-prioritization"><span class="header-section-number">2.5</span> Undertake barrier prioritization</h2>
+<p>Barriers will be prioritized based on those that will provide the greatest ecological benefit (i.e., will reconnect the greatest amount of habitat, if remediated). The upstream functional network (i.e., the amount of habitat upstream of the barrier in question, but downstream of all subsequent upstream barriers) will be calculated to inform the prioritization (see Figure 3).</p>
+<center>
+<img src="./functional_network.png" class="img-fluid">
+<figcaption>
+Figure 3. A conceptual example of the upstream and downstream functional networks for a given barrier.
+</figcaption>
+</center>
+<p>&nbsp;</p>
+<p>Barriers that have been modelled are assumed to be barriers until field verification is undertaken and structures that have been assessed as “potential” barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model will identify stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability, which will require additional field verification once barrier assessments have been completed. As such, the barrier prioritization process should be considered iterative and the initial list represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations. Each time new information is required, the underlying datasets can be updated, and the <strong>abfishpass</strong> tools can be re-run to provide up-to-date results.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Purpose</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./software-docs.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
