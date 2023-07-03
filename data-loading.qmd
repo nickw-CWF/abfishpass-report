@@ -9,11 +9,10 @@ open-source PostgreSQL database to store and process the data.
 
 Tools:
 
--   [load_alberta/create_db.py](https://github.com/egouge/cwf-alberta/blob/main/src/load_alberta/create_db.py)
+-   [load_alberta/create_db.py](https://github.com/Canadian-Wildlife-Federation/abfishpass/blob/main/src/load_alberta/create_db.py)
     -- this script creates all the necessary database tables
--   [load_alberta/load_alberta.py](https://github.com/egouge/cwf-alberta/blob/main/src/load_alberta/load_alberta.py)
-    -- this script uses OGR to load the provided Alberta data from the
-    .gdb file into the PostgreSQL database.
+-   [load_alberta/load_alberta.py](https://github.com/Canadian-Wildlife-Federation/abfishpass/blob/main/src/load_alberta/load_alberta.py)
+    -- this script uses OGR to load data for Alberta road, rail, trail, and stream networks from a .gdb file into the PostgreSQL database.
 
 ### Configuring Fish Species Model Parameters
 
@@ -21,7 +20,7 @@ As a part of the loading scripts a fish species table is created which
 contains the fish species of interest for modelling and various
 modelling parameters. Before processing the watershed these parameters
 should be reviewed and configured as necessary. See
-[load_alberta/create_db.py](https://github.com/egouge/cwf-alberta/blob/main/src/load_alberta/create_db.py#L159).
+[processing_scripts/load_parameters.py](https://github.com/Canadian-Wildlife-Federation/abfishpass/blob/main/src/processing_scripts/load_parameters.py).
 
 ::: callout-note
 Currently there is no velocity or channel confinement data. These
@@ -30,9 +29,7 @@ parameters are placeholders for when this data is added.
 
 ## Watershed Processing
 
-Data preparation is completed by watershed ID, each watershed is
-processed into a separate schema in the database named after the
-watershed identifier (e.g., ws17010301 for the Berland River).
+Data preparation and processing is completed by watershed id. Each watershed is processed into a separate schema in the database. The watershed configuration must be specified in the ini file and the configuration to be used provided to the script.
 
 Currently preparation includes:
 

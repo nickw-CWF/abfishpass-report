@@ -1,13 +1,31 @@
-# License
+# ABFishPass Software
 
-This section provides an overview of the model tools and how to run them.
+ABFishPass was developed as a suite of scripts that can be used to run the data preparation and processing models. The ABFishPass source code and documentation on requirements, software configuration, and how to run the data preparation and processing tools can be found in the [GitHub repository](https://github.com/Canadian-Wildlife-Federation/abfishpass).
 
 :::{.callout-note}
 **abfishpass** is under active development and documentation will change over time.
 :::
 
-## abfishpass software {.unnumbered}
+## Data Sources {.unnumbered}
+
+The following spatial data sources are used by the ***abfishpass*** tools:
+
+- [Fish and Wildlife Management Information System (FWMIS) - Fish Survey](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- [FWMIS - Aquatic Habitat](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- [FWMIS - Fish Stocking](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- [FWMIS - Hydrology Arcs](https://www.alberta.ca/access-fwmis-data.aspx) -- Government of Alberta
+- Base Features Access Roads -- Alberta Environment and Parks
+- Base Features Access Railway -- Alberta Environment and Parks
+- Designated Trails -- Alberta Environment and Parks
+- Barrier Inspection Data -- Watercourse Crossing Program, AEP
+- [Canadian Aquatic Barriers Database](https://aquaticbarriers.ca) -- Canadian Wildlife Federation
+
+:::{.callout-note}
+***abfishpass*** is under active development and data sources may change over time.
+:::
+
+## License {.unnumbered}
 
 **Licence**: Apache License, Version 2.0 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-**Copyright**: &copy; 2022 Canadian Wildlife Federation, Alberta Environment and Parks
+**Copyright**: &copy; 2023 Canadian Wildlife Federation, Alberta Environment and Parks

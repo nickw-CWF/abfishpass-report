@@ -3,7 +3,7 @@
 ## Software Requirements
 
 - Python (tested with version 3.9.5)
-  + Modules: shapely, psycopg2, tifffile
+  + Modules: shapely, psycopg2, tifffile, requests
 - GDAL/ORG (comes installed with QGIS or can install standalone)
 - PostgreSQL/PostGIS database
 
@@ -14,6 +14,10 @@ All configuration is setup in the ``config.ini`` file. Before running any script
 All of the scripts allow for a custom configuration file to be specified by providing it as the ``-c`` argument to the program. If not supplied, the default ``config.ini`` file will be used. For example:
 
 ``prompt> create_db.py -c custom_config.ini``
+
+The ```config.ini``` and ```appconfig.py``` files are included in the ```/src``` and ```/src/processing scripts``` folders by default. If you want to run a script from another folder (e.g., ```src/load_alberta```), you will need to make sure the ```config.ini``` and ```appconfig.py``` files are in that folder as well.
+
+We recommend editing a single ```config.ini``` file with the configuration parameters you need, then copying this file to the other folders if you want to run individual scripts.
 
 ### Configuration File Definitions {.unnumbered}
 
@@ -28,23 +32,17 @@ proj = optional location of proj library
 host = database host
 port = database post
 name = database name
-user = database username
-password = database password
+
 data_schema = name of main schema for holding raw stream data
 stream_table = names of streams table
 fish_species_table = name of fish species table
 working_srid = the srid (3400) of the stream data - these scripts use the function st_length to compute stream length so the raw data should be in a meters based projection (or reprojected before used)
+
 aquatic_habitat_table = table name for fish aquatic habitat data
 fish_stocking_table = table name for fish stocking data
 fish_survey_table = table name for fish survey data
 
-[CABD_DATABASE] - the barriers database for loading barrier data
-host = CABD host name
-port = CABD port
-name = CABD database name
-user = CABD username
-password = CABD password
-buffer = this is the buffer distance to grab features - the units are in the working_srid so if its meters 200 is reasonable, if it's degrees something like 0.001 is reasonable
+[CABD_DATABASE] buffer = this is the buffer distance to grab features - the units are in the working_srid so if its meters 200 is reasonable, if it's degrees something like 0.001 is reasonable
 snap_distance = distance (in working srid units) for snapping point features #to the stream network (fish observation data, barrier data etc)
 
 [CREATE_LOAD_SCRIPT]
@@ -57,14 +55,13 @@ trail_table = trail table name
 stream_table = stream table name
 
 [WATERSHEDID 1] -> there will be one section for each watershed with a unique section name
-watershed_id = watershed id to process
-output_schema = output schema name
+watershed_id = watershed id to process nhn_watershed_id = nhn watershed id to process output_schema = output schema name
 fish_observation_data = zip file containing fish observation data
+assessment_data = spatial file containing assessment data
 
 [WATERSHEDID 2] -> there will be one section for each watershed with a unique section name
-watershed_id = watershed id to process
-output_schema = output schema name
-fish_observation_data = zip file containing fish observation data
+watershed_id = watershed id to process nhn_watershed_id = nhn watershed id to process output_schema = output schema name
+fish_observation_data = zip file containing fish observation data assessment_data = spatial file containing assessment data
 
 [ELEVATION_PROCESSING]
 dem_directory = directory containing dem
@@ -79,17 +76,19 @@ upstream_route_measure =name upstream route measure field
 [GRADIENT_PROCESSING]
 vertex_gradient_table = table for storing vertex gradient values
 segment_gradient_field = name of segment gradient field (in streams table)
-max_downstream_graident_field = name of field for storing the maximum downstream segment gradient (in streams table)
+max_downstream_gradient_field = name of field for storing the maximum downstream segment gradient (in streams table)
 
 [BARRIER_PROCESSING]
-barrier_table = table for storing barriers
+barrier_table = table for storing barriers gradient_barrier_table = table where gradient barriers are stored (type = gradient_barrier)
 
-[MODELLED_CROSSINGS]
-modelled_crossings_table = table for storing modelled crossings
-strahler_order_barrier_limit = all crossings on streams with strahler order less than this will be considered barriers and treated similar to dams/waterfalls for habitat modelling
+[CROSSINGS]
+modelled_crossings_table = table for storing modelled crossings assessed_crossings_table = table for storing assessed crossings crossings_table = table for storing all stream crossings (both modelled and assessed)
 
-[HABITAT_STATS]
-stats_table = this table will be created in the [DATABASE].data_schema schema and contain watershed statistics
+join_distance = distance (in working srid units) for joining assessment data with modelled crossings
 
-watershed_data_schemas=ws17010302,ws17010301 --> this is the list of processing schemas to include in the stats the schemas must exist and data must be processed
+strahler_order_barrier_limit = all crossings on streams with Strahler order less than this will be considered barriers and treated similar to dams/waterfalls for habitat modelling
+
+[HABITAT_STATS] stats_table = this table will be created in the [DATABASE].data_schema schema and contain watershed statistics
+
+watershed_data_schemas = the list of processing schemas to include in the stats table; the schemas must exist and data must be fully processed
 ```

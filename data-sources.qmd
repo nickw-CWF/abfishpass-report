@@ -9,11 +9,9 @@ The following spatial data sources are used by the ***abfishpass*** tools:
 - Base Features Access Roads -- Alberta Environment and Parks
 - Base Features Access Railway -- Alberta Environment and Parks
 - Designated Trails -- Alberta Environment and Parks
-- Barrier Inspection Data -- Watercourse Crossing Program, AEP [^1]
+- Barrier Inspection Data -- Watercourse Crossing Program, AEP
 - [Canadian Aquatic Barriers Database](https://aquaticbarriers.ca) -- Canadian Wildlife Federation
 
 :::{.callout-note}
 ***abfishpass*** is under active development and data sources may change over time.
 :::
-
-[^1]: Pending data-sharing agreements

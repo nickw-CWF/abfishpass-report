@@ -12,11 +12,10 @@ The **abfishpass** tools will help quantify and update the connectivity context 
 
 - Import and load required datasets to an open-source database <span class="badge bg-success">Complete</span> [^1]
 - Calculate elevation and slope of the stream network <span class="badge bg-success">Complete</span>
-- Generate modelled stream crossings and match barrier inspection data to corresponding modelled points <span class="badge bg-success">Complete</span> [^2]
-- Model gradient barriers, accessibility, and potential habitat <span class="badge bg-warning">Pending</span> [^3]
+- Generate modelled stream crossings and match barrier inspection data to corresponding modelled points <span class="badge bg-success">Complete</span>
+- Model gradient barriers, accessibility, and potential habitat <span class="badge bg-success">Complete</span> [^2]
 - Prioritize barriers based on upstream habitat length (both total and functional networks) <span class="badge bg-success">Complete</span>
 - Calculate overall connectivity status of the watershed <span class="badge bg-success">Complete</span>
 
 [^1]: Tools are complete; however, full data release is pending data-sharing agreements for watercourse crossing inspection data.
-[^2]: Tools are complete; however, full data release is pending data-sharing agreements for watercourse crossing inspection data.
-[^3]: Gradient barrier and accessibility modelling is complete. Habitat modelling could not be completed due to the lack of existing literature to support derived thresholds for gradient and discharge for useable habitat (i.e., spawning and rearing) for target species. Pending expert input on parameter thresholds for habitat modelling.
+[^2]: Gradient barrier and accessibility modelling is complete. The modelling framework is built to allow custom habitat parameters (i.e., gradient, discharge, and channel confinement) to be entered for each species of interest. However, due to the lack of existing literature to support derived thresholds for gradient and discharge for useable habitat (i.e., spawning and rearing) for target species, the current habitat models only account for accessibility. Pending expert input on parameter thresholds for habitat modelling.

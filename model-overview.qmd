@@ -1,6 +1,6 @@
 # Approach
 
-**abfishpass** is a decision-support tool intended to compliment the watershed connectivity remediation planning process (see the report for *Activity 2: Deliver Watershed Connectivity Planning Framework and Associated Decision-Support Tools and Planning Exercises*), and the decisions made during the planning workshops with partners will influence the inputs, parameters, and outputs of the spatial models. This collaborative method blend local stakeholder and rightsholder knowledge with innovative GIS analyses to gain a shared understanding of where remediation efforts will have the greatest benefit for fish. The primary steps in the spatial modelling approach are:
+**abfishpass** is a decision-support tool intended to compliment watershed connectivity remediation planning processes (see [Watershed Connectivity Remediation Planning practitioners' guide](https://cwf-fcf.org/en/resources/research-papers/CWF-WCRP-Guide.pdf)), and the decisions made during the planning workshops with partners will influence the inputs, parameters, and outputs of the spatial models. This collaborative method blends local stakeholder and rightsholder knowledge with innovative GIS analyses to gain a shared understanding of where remediation efforts will have the greatest benefit for fish. The primary steps in the spatial modelling approach are:
 
 1. Define the geographic scope
 2. Define the thematic scope
@@ -18,7 +18,7 @@ In Alberta, the Hydrologic Unit Code (HUC) system is used to define watersheds a
 
 ## Define the thematic scope
 
-Connectivity is a critical component of freshwater ecosystems that encompasses a variety of factors related to ecosystem structure and function, such as the ability of aquatic organisms to disperse and/or migrate, the transportation of energy and matter (e.g., nutrient cycling and sediment flows), and temperature regulation. Though each of these factors are important when considering the health of a watershed, for the purposes of WCRPs the term “connectivity” is generally defined as the degree to which aquatic species can disperse and/or migrate freely through freshwater systems. WCRPs are intended to focus on the direct remediation and prevention of localized, physical barriers instead of the broad land-use patterns that are causing chronic connectivity issues in the watershed, which differentiates this process from traditional watershed or fish habitat restoration plans). As such, defining the thematic scope of "connectivity" helps determine key parameters for spatial modelling, and comprises three main concepts:
+Connectivity is a critical component of freshwater ecosystems that encompasses a variety of factors related to ecosystem structure and function, such as the ability of aquatic organisms to disperse and/or migrate, the transportation of energy and matter (e.g., nutrient cycling and sediment flows), and temperature regulation. Though each of these factors are important when considering the health of a watershed, for the purposes of WCRPs the term “connectivity” is generally defined as the degree to which aquatic species can disperse and/or migrate freely through freshwater systems. WCRPs are intended to focus on the direct remediation and prevention of localized, physical barriers instead of the broad land-use patterns that are causing chronic connectivity issues in the watershed, which differentiates this process from traditional watershed or fish habitat restoration plans. As such, defining the thematic scope of "connectivity" helps determine key parameters for spatial modelling, and comprises three main concepts:
 
 1. Target species
 2. Dimensions of connectivity
@@ -26,12 +26,12 @@ Connectivity is a critical component of freshwater ecosystems that encompasses a
 
 ### Target species {.unnumbered}
 
-The choice of which target species to select will depend on several factors, such as funding source priorities, the availability of species-distribution data to inform the spatial analyses, and the ecological and cultural priorities of the team. Some time target species can be combined into groups or "guilds" to simplify the planning and spatial modelling processes (e.g., Coldwater Salmonids for the Berland-Wildhay project).
+The choice of which target species to select will depend on several factors, such as funding source priorities, the availability of species-distribution data to inform the spatial analyses, and the ecological and cultural priorities of the team. Sometimes target species can be combined into groups or "guilds" to simplify the planning and spatial modelling processes (e.g., *Coldwater Salmonids* for the Berland-Wildhay project).
 
 The selection of target species will inform spatial modelling in two ways:
 
-1. Life history characteristics - the way species move through freshwater systems will help determine which barriers effect their movements and the way we quantify the connectivity status of the watershed (see Table 1).
-2. Habitat use - the geomorphic characteristics of a stream reach the is suitable for spawning, rearing, or other life stages will vary by species (see *Estimate watershed accessibility and habitat distribution*).
+1. Life history characteristics - the way species move through freshwater systems will help determine which barriers affect their movements and the way we quantify the connectivity status of the watershed (see Table 1).
+2. Habitat use - the geomorphic characteristics of a stream reach that are suitable for spawning, rearing, or other life stages will vary by species (see *Estimate watershed accessibility and habitat distribution*).
 
 | Life history | Description |
 | --- | --- |
@@ -119,7 +119,7 @@ There are two primary steps to this process:
 
 ### Stream Accessibility {.unnumbered}
 
-Defining stream accessibility relies on incorporating natural (e.g., waterfall) and physiological (e.g., gradient barrier) data into spatial models - we don't want to prioritize barriers for remediation that target species cannot naturally access. The goal of this step is to define the accessibility values of each stream segment in the watershed, which can be categorized as:
+Defining stream accessibility relies on incorporating natural (e.g., waterfall) and physiological (e.g., gradient barrier) data into spatial models - we don't want to prioritize barriers for remediation that are on streams that target species cannot naturally access. The goal of this step is to define the accessibility values of each stream segment in the watershed, which can be categorized as:
 
 - Potentially accessible: the stream segment *should* be accessible to target species in the absence of anthropogenic barriers
 - Not accessible: the stream segment is not accessible to target species, even in the absence of anthropogenic barriers (i.e., there is a natural barrier like a waterfall or gradient barrier)
@@ -127,9 +127,9 @@ Defining stream accessibility relies on incorporating natural (e.g., waterfall) 
 
 Waterfall data may need field verification as part of the iterative barrier prioritization process, as some species can pass waterfalls of a certain height (e.g., Chinook Salmon can pass waterfalls up to 5 m in height) and therefore some waterfalls may not be barriers to fish passage.
 
-Identifying gradient barriers requires the derivation of gradient values from the elevation changes of the stream network. Different target species will have different swimming abilities, and therefore identify stream reaches that have sustained gradient values above a given species' passability thresholds is important to exclude non-accessible streams from further analysis steps.
+Identifying gradient barriers requires the derivation of gradient values from the elevation changes of the stream network. Different target species will have different swimming abilities, and therefore identifying stream reaches that have sustained gradient values above a given species' passability threshold is important to exclude non-accessible streams from further analysis steps.
 
-Accessibility is also dependent on species life history strategies, for example, a 5 m waterfall will restrict potentially accessible stream for anadramous species (they cannot move upstream of the waterfall during their migration). But, for a system with fluvial or resident species, there may exist population both upstream and downstream of the waterfall, meaning that the stream segments upstream of the waterfall should still be considered *potentially accessible*, as long as species presence is verifiable upstream of the waterfall.
+Accessibility is also dependent on species life history strategies, for example, a 5 m waterfall will restrict potentially accessible streams for anadramous species (they cannot move upstream of the waterfall during their migration). But, for a system with fluvial or resident species, there may exist population both upstream and downstream of the waterfall, meaning that the stream segments upstream of the waterfall should still be considered *potentially accessible*, as long as species presence is verifiable upstream of the waterfall.
 
 For example, for fluvial species with a gradient barrier threshold set to 35% and target species observations upstream of a given "barrier":
 
@@ -142,11 +142,11 @@ For example, for fluvial species with a gradient barrier threshold set to 35% an
 
 &nbsp;
 
-Assigning accessibility values refines the geographic scope of the analysis for subsequent steps -- modelled habitat will not be considered and barriers will not be prioritized for *not accessible* streams. This allows resources to be focused on the parts of the watershed that will most benefit target species.
+Assigning accessibility values refines the geographic scope of the analysis for subsequent steps -- habitat will not be modelled and barriers will not be prioritized for *not accessible* streams. This allows resources to be focused on the parts of the watershed that will most benefit target species.
 
 ### Model Potential Habitat {.unnumbered}
 
-While calculating stream accessibility helps refine the scope for analysis, it does not guarantee that *accessible* and *potentially accessible* streams will support useable habitat (e.g., spawning, rearing, or overwintering habitat) for target species. During the connectivity status assessment and barrier prioritization process, we want to ensure that we are focusing on the quantity of potential useable habitat, rather than total stream length. For example, a barrier that is blocking 2 km of spawning habitat should be prioritized over a barrier that is blocking 200 m of spawning habitat and 5 km of non-habitat.
+Calculating stream accessibility helps refine the scope for analysis; however, it does not guarantee that *accessible* and *potentially accessible* streams will support useable habitat (e.g., spawning, rearing, or overwintering habitat) for target species. During the connectivity status assessment and barrier prioritization process, we want to ensure that we are focusing on the quantity of potential useable habitat, rather than total stream length. For example, a barrier that is blocking 2 km of spawning habitat should be prioritized over a barrier that is blocking 200 m of spawning habitat and 5 km of non-habitat.
 
 To model potential habitat in the watershed, **abfishpass** adapts the Intrinsic Potential (IP) habitat modelling framework (see [Sheer et al. 2009](https://www.researchgate.net/publication/261359826_Development_and_Management_of_Fish_Intrinsic_Potential_Data_and_Methodologies_State_of_the_IP_2008_Summary_Report_Pacific_Northwest_Aquatic_Monitoring_Partnership_National_Oceanic_and_Atmospheric_Admi)). The IP framework derives three key geomorphic parameters of stream segments, which are used to assign potential habitat values:
 
@@ -183,4 +183,4 @@ Barriers will be prioritized based on those that will provide the greatest ecolo
 
 &nbsp;
 
-Barriers that have been modelled are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model will identify stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability, which will require additional field verification once barrier assessments have been completed. As such, the barrier prioritization process should be considered iterative and the initial list represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations. Each time new information is required, the underlying datasets can be updated, and the **abfishpass** tools can be re-run to provide up-to-date results.
+Barriers that have been modelled are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model will identify stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability, which will require additional field verification once barrier assessments have been completed. As such, the barrier prioritization process should be considered iterative and the initial list represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations. Each time new information is acquired, the underlying datasets can be updated, and the **abfishpass** tools can be re-run to provide up-to-date results.
